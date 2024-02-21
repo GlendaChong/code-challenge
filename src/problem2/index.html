@@ -1,25 +1,40 @@
 <html>
 
 <head>
-  <title>Fancy Form</title>
-
-  <!-- You may add more stuff here -->
+  <title>Currency Swap Form</title>
   <link href="style.css" rel="stylesheet" />
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      background-image: url("./background.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
 </head>
 
 <body>
-
-  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <h5>Swap</h5>
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
-
-    <label for="output-amount">Amount to receive</label>
-    <input id="output-amount" />
-
-    <button>CONFIRM SWAP</button>
-  </form>
+  <div class="container">
+    <h1 class="header">Currency Converter</h1>
+    <div class="form-wrapper">
+        <div class="input-wrapper">
+            <label for="fromCurrencyDropdown">Convert from:</label>
+            <select id="fromCurrencyDropdown"></select>
+            <input type="text" id="fromAmount" placeholder="Amount to convert">
+        </div>
+        <div class="swap-icon" id="swapCurrencies">
+            <i class="fa fa-exchange"></i>
+        </div>
+        <div class="input-wrapper">
+            <label for="toCurrencyDropdown">Convert to:</label>
+            <select id="toCurrencyDropdown"></select>
+            <input type="text" id="toAmount" placeholder="Converted amount" disabled>
+        </div>
+    </div>
+    <div id="errorText" style="color: red; margin-top: 10px;"></div>
+    <h3 id="exchangeRate"></h3>
+  </div>
   <script src="script.js"></script>
 </body>
 
