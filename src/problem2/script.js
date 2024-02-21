@@ -19,7 +19,6 @@ let currencyData = null;
 let tokenImages = {}; 
 
 
-// Add currencies
 function populateCurrencyDropdown(data, index) {
     const currencyDropdown = document.getElementById(index); 
     for (const row in data) {
@@ -30,7 +29,7 @@ function populateCurrencyDropdown(data, index) {
     }
 }
 
-
+// Load currency data into dropdown 
 window.onload = async function() {
     currencyData = await fetchData(); 
     if (currencyData && tokenImages) {
@@ -92,6 +91,7 @@ function swapCurrencies() {
 
     updateConversionAndExchangeRate(); 
 }
+
 
 amountInput.addEventListener('input', updateConversionAndExchangeRate); 
 fromCurrencyDropdown.addEventListener('change', updateConversionAndExchangeRate); 
